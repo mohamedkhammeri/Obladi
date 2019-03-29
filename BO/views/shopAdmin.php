@@ -1,5 +1,7 @@
 <?php
 include_once 'includes/header.inc.php';
+require_once '../core/ProduitC.php';
+
 ?>
 
 <!--content-->
@@ -26,14 +28,21 @@ include_once 'includes/header.inc.php';
             <table id="example2" class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Titre</th>
+                  <th>Description</th>
+                  <th>Photo</th>
+                  <th>Categorie</th>
+                  <th>Sous type</th>
+                  <th>Prix</th>
                 </tr>
               </thead>
               <tbody>
+
+                <?php
+                $prods=afficherProduitShop();
+                
+                ?>
+
               </tbody>
             </table>
           </div>
