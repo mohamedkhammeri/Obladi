@@ -1,15 +1,9 @@
 <?php
-
-if(isset($_POST['idUpdate'])){
-  header("location: updateProductMenu.php?idUpdate={$_POST['idUpdate']}");
-}
-
 include_once 'includes/header.inc.php';
-require_once '../core/ProduitC.php';
-require_once '../entities/Produit.php';
+require_once '../core/ReservationC.php';
 
 if(isset($_POST['idSup'])){
-  supprimerProduit($_POST['idSup']);
+  supprimerReservation($_POST['idSup']);
 }
 
 ?>
@@ -19,13 +13,12 @@ if(isset($_POST['idSup'])){
 
   <section class="content-header">
     <h1>
-      Products
+      Reservation
       <small>Menu</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li class="active">Menu</li>
+      <li><a href="#" class="active">Reservation</a></li>
     </ol>
   </section>
 
@@ -35,7 +28,7 @@ if(isset($_POST['idSup'])){
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header form-inline">
-            <h3 class="box-title">List Products</h3>
+            <h3 class="box-title">List Reservation</h3>
             <style media="screen">
               @media (max-width: 751px){
                 #searshForm{
@@ -51,53 +44,40 @@ if(isset($_POST['idSup'])){
                     </button>
                   </span>
             </div>
-            <span class="pull-right">
-              <button id="addBtn" type="button" class="btn btn-success" name="button">
-                <i class="fa fa-plus"></i>Add
-              </button>
-            </span>
           </div>
           <div class="box-body">
             <table id="" class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th>Titre</th>
-                  <th>Description</th>
-                  <th>Photo</th>
-                  <th>Categorie</th>
-                  <th>Sous type</th>
-                  <th>Prix</th>
+                  <th>Nom</th>
+                  <th>Prenom</th>
+                  <th>Date, Temps</th>
+                  <th>Tel</th>
+                  <th>Message</th>
+                  <th>Nombre personnes</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
 
                 <?php
-                $prods=afficherProduitMenu();
+                $res=afficherReservation();
 
-                foreach ($prods as $prod) {
+                foreach ($res as $re) {
                   ?>
                   <tr>
-                    <td><?php echo $prod['titre'] ?></td>
-                    <td><?php echo $prod['description'] ?></td>
-                    <td><?php echo $prod['photo'] ?></td>
-                    <td><?php echo $prod['categorie'] ?></td>
-                    <td><?php echo $prod['soustype'] ?></td>
-                    <td><?php echo $prod['prix'] ?> DT</td>
+                    <td><?php echo $re['firstname'] ?></td>
+                    <td><?php echo $re['lastname'] ?></td>
+                    <td><?php echo "{$re['date']}, {$re['time']}" ?></td>
+                    <td><?php echo $re['phone'] ?></td>
+                    <td><?php echo $re['message'] ?></td>
+                    <td><?php echo $re['nbpers'] ?></td>
                     <td>
                       <form class="" action="" method="post">
-                        <input type="hidden" name="idSup" value="<?php echo $prod['id'] ?>">
+                        <input type="hidden" name="idSup" value="<?php echo $re['idreservation'] ?>">
                         <button type="submit" name="" type="button" class="btn btn-danger">
                           <i class="fa fa-trash"></i>
                           Supprimer
-                        </button>
-                      </form>
-
-                      <form class="" action="" method="post">
-                        <input type="hidden" name="idUpdate" value="<?php echo $prod['id'] ?>">
-                        <button type="submit" name="" type="button" class="btn btn-warning">
-                          <i class="fa fa-pencil"></i>
-                          Modifier
                         </button>
                       </form>
 
@@ -117,12 +97,6 @@ if(isset($_POST['idSup'])){
   </section>
 
 </div>
-
-<script type="text/javascript">
-  document.getElementById('addBtn').addEventListener('click',function () {
-    window.location.href='addProductMenu.php';
-  });
-</script>
 
 
 <?php

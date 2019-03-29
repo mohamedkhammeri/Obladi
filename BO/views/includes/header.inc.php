@@ -89,7 +89,7 @@
           </li>
 
           <li>
-            <a href="#">
+            <a href="reservationAdmin.php">
               <i class="fa fa-calendar-check-o"></i> <span>Reservation</span>
               <span class="pull-right-container">
                 <small class="label pull-right bg-green"></small>
@@ -98,7 +98,7 @@
           </li>
 
           <li>
-            <a href="#">
+            <a href="tableAdmin.php">
               <i class="fa fa-glass"></i> <span>Table</span>
               <span class="pull-right-container">
                 <small class="label pull-right bg-green"></small>
@@ -107,7 +107,7 @@
           </li>
 
           <li>
-            <a href="#">
+            <a href="commentsAdmin.php">
               <i class="fa fa-comments"></i> <span>Comments</span>
               <span class="pull-right-container">
                 <small class="label pull-right bg-green"></small>

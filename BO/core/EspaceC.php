@@ -6,7 +6,7 @@ function ajouterEspace(Espace $esp)
 {
 
   $db=config::getConnexion();
-  $sql="insert into espace values(?)";
+  $sql="insert into espace(nbplace) values(?)";
   $req=$db->prepare($sql);
   $req->bindvalue(1,$esp->getNbPlace());
 
@@ -17,7 +17,7 @@ function ajouterEspace(Espace $esp)
 function afficherEspace()
 {
   $db=config::getConnexion();
-  $sql="select * from espace";
+  $sql="select nbplace,count(*) as tot from espace group by nbplace";
   $res=$db->query($sql);
   return $res->fetchAll();
 }
@@ -30,9 +30,12 @@ function numberEspaces()
   return $res->fetchColumn();
 }
 
-function supprimerEspace(int $idPlace)
+function supprimerEspace(int $nbPlaces)
 {
   $db=config::getConnexion();
+  $sql="select idPlace from espace where nbplace={$nbPlaces}";
+  $res=$db->query($sql);
+  $idPlace=$res->fetchColumn();
   $sql="delete from espace where idPlace=:idPlace";
   $req=$db->prepare($sql);
   $req->bindvalue(':idPlace',$idPlace);
@@ -47,6 +50,16 @@ function modifierEspace(Espace $newEspace)
   $req=$db->prepare($sql);
   $req->bindvalue(':idPlace',$newEspace->getIdPlace());
   $req->bindvalue(':nbPlace',$newEspace->getNbPlace());
+
+  $req->execute();
+}
+
+function emptyPlaces(int $nbPlaces)
+{
+  $db=config::getConnexion();
+  $sql="update extra set value=:newValue where param='nbEspaceVide'";
+  $req=$db->prepare($sql);
+  $req->bindvalue(':newValue',$nbPlaces);
 
   $req->execute();
 }

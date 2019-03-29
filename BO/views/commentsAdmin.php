@@ -1,15 +1,11 @@
 <?php
-
-if(isset($_POST['idUpdate'])){
-  header("location: updateProductMenu.php?idUpdate={$_POST['idUpdate']}");
-}
-
 include_once 'includes/header.inc.php';
+require_once '../core/ProduitNoteC.php';
 require_once '../core/ProduitC.php';
 require_once '../entities/Produit.php';
 
 if(isset($_POST['idSup'])){
-  supprimerProduit($_POST['idSup']);
+  supprimerProduitNote($_POST['idSup']);
 }
 
 ?>
@@ -19,13 +15,11 @@ if(isset($_POST['idSup'])){
 
   <section class="content-header">
     <h1>
-      Products
-      <small>Menu</small>
+      Comments
     </h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li class="active">Menu</li>
+      <li><a href="#" class="active">Comments</a></li>
     </ol>
   </section>
 
@@ -35,7 +29,7 @@ if(isset($_POST['idSup'])){
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header form-inline">
-            <h3 class="box-title">List Products</h3>
+            <h3 class="box-title">List Comments</h3>
             <style media="screen">
               @media (max-width: 751px){
                 #searshForm{
@@ -51,53 +45,34 @@ if(isset($_POST['idSup'])){
                     </button>
                   </span>
             </div>
-            <span class="pull-right">
-              <button id="addBtn" type="button" class="btn btn-success" name="button">
-                <i class="fa fa-plus"></i>Add
-              </button>
-            </span>
           </div>
           <div class="box-body">
             <table id="" class="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th>Titre</th>
-                  <th>Description</th>
-                  <th>Photo</th>
-                  <th>Categorie</th>
-                  <th>Sous type</th>
-                  <th>Prix</th>
+                  <th>Produit</th>
+                  <th>Comments</th>
+                  <th>Ratings</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
 
                 <?php
-                $prods=afficherProduitMenu();
+                $prods=afficherProduitNote();
 
                 foreach ($prods as $prod) {
                   ?>
                   <tr>
-                    <td><?php echo $prod['titre'] ?></td>
-                    <td><?php echo $prod['description'] ?></td>
-                    <td><?php echo $prod['photo'] ?></td>
-                    <td><?php echo $prod['categorie'] ?></td>
-                    <td><?php echo $prod['soustype'] ?></td>
-                    <td><?php echo $prod['prix'] ?> DT</td>
+                    <td><?php echo getProduitById($prod['id'])->getTitre(); ?></td>
+                    <td><?php echo $prod['comment'] ?></td>
+                    <td><?php echo $prod['rating'] ?></td>
                     <td>
                       <form class="" action="" method="post">
                         <input type="hidden" name="idSup" value="<?php echo $prod['id'] ?>">
                         <button type="submit" name="" type="button" class="btn btn-danger">
                           <i class="fa fa-trash"></i>
                           Supprimer
-                        </button>
-                      </form>
-
-                      <form class="" action="" method="post">
-                        <input type="hidden" name="idUpdate" value="<?php echo $prod['id'] ?>">
-                        <button type="submit" name="" type="button" class="btn btn-warning">
-                          <i class="fa fa-pencil"></i>
-                          Modifier
                         </button>
                       </form>
 
@@ -115,15 +90,7 @@ if(isset($_POST['idSup'])){
       </div>
     </div>
   </section>
-
 </div>
-
-<script type="text/javascript">
-  document.getElementById('addBtn').addEventListener('click',function () {
-    window.location.href='addProductMenu.php';
-  });
-</script>
-
 
 <?php
 include_once 'includes/footer.inc.php';

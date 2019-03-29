@@ -6,13 +6,14 @@ function ajouterProduit​(Produit $prod)
 {
 
   $db=config::getConnexion();
-  $sql="insert into produit(titre,description,photo,categorie,soustype) values(?,?,?,?,?)";
+  $sql="insert into produit(titre,description,photo,categorie,soustype,prix) values(?,?,?,?,?,?)";
   $req=$db->prepare($sql);
   $req->bindvalue(1,$prod->getTitre());
   $req->bindvalue(2,$prod->getDescription());
   $req->bindvalue(3,$prod->getPhoto());
   $req->bindvalue(4,$prod->getCategorie());
   $req->bindvalue(5,$prod->getSoustype());
+  $req->bindvalue(6,$prod->getPrix());
 
   $req->execute();
 }
@@ -53,7 +54,7 @@ function supprimerProduit(int $id)
 {
   $prod=getProduitById($id);
   if($prod->getPhoto()!="img/default.jpg"){
-    unlink("stockage/{$prod->getPhoto()}");
+    unlink("../../FO/views/stockage/{$prod->getPhoto()}");
   }
   $db=config::getConnexion();
   $sql="delete from produit where id=:id";
