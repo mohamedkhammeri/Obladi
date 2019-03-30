@@ -16,6 +16,10 @@ function ajouterProduit​(Produit $prod)
   $req->bindvalue(6,$prod->getPrix());
 
   $req->execute();
+
+  //send to clients
+  require_once '../views/testMail.php';
+
 }
 
 function afficherProduit()
