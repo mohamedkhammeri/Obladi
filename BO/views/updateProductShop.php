@@ -5,6 +5,7 @@ $inipath = php_ini_loaded_file();
 require_once '../core/ProduitC.php';
 require_once '../entities/Produit.php';
 
+//recuperer produit selon id
 $prodUpdate=getProduitById($_GET['idUpdate']);
 
 //controle

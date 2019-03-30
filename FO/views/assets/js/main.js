@@ -287,7 +287,8 @@ AOS.init({
   //fixTime
   $('.appointment_date').datepicker({
     'format': 'yyyy-m-d',
-    'autoclose': true
+    'autoclose': true,
+    'startDate' : '+0d'
   });
 
   $('.appointment_time').timepicker({

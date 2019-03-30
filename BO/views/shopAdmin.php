@@ -1,8 +1,8 @@
 <?php
-
+/*
 if(isset($_POST['idUpdate'])){
   header("location: updateProductShop.php?idUpdate={$_POST['idUpdate']}");
-}
+}*/
 
 include_once 'includes/header.inc.php';
 require_once '../core/ProduitC.php';
@@ -93,7 +93,7 @@ if(isset($_POST['idSup'])){
                         </button>
                       </form>
 
-                      <form class="" action="" method="post">
+                      <form class="" action="updateProductShop.php" method="get">
                         <input type="hidden" name="idUpdate" value="<?php echo $prod['id'] ?>">
                         <button type="submit" name="" type="button" class="btn btn-warning">
                           <i class="fa fa-pencil"></i>
@@ -118,6 +118,7 @@ if(isset($_POST['idSup'])){
 </div>
 
 <script type="text/javascript">
+//ecoute d clic
   document.getElementById('addBtn').addEventListener('click',function () {
     window.location.href='addProductShop.php';
   });
