@@ -28,7 +28,7 @@
           <div class="col-md-8 col-sm-12 text-center ftco-animate">
             <span class="subheading">Welcome</span>
             <h1 class="mb-4">The Best Coffee Testing Experience</h1>
-            <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <p class="mb-4 mb-md-5">proposé aux standards internationaux, et vous offrir un espace calme, design et propice à la communication, au travail et à la détente.</p>
             <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
           </div>
 
@@ -44,7 +44,7 @@
           <div class="col-md-8 col-sm-12 text-center ftco-animate">
             <span class="subheading">Welcome</span>
             <h1 class="mb-4">Amazing Taste &amp; Beautiful Place</h1>
-            <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <p class="mb-4 mb-md-5">Obladi combine coffee place & working space, tout en gardant un esprit eco-friendly. Notre devise: vous proposer un café de qualité.</p>
             <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
           </div>
 
@@ -60,7 +60,7 @@
           <div class="col-md-8 col-sm-12 text-center ftco-animate">
             <span class="subheading">Welcome</span>
             <h1 class="mb-4">Creamy Hot and Ready to Serve</h1>
-            <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <p class="mb-4 mb-md-5">Obladi combine coffee place & working space, tout en gardant un esprit eco-friendly. Notre devise: vous proposer un café de qualité.</p>
             <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
           </div>
 
@@ -77,21 +77,21 @@
             <div class="col-md-4 d-flex ftco-animate">
               <div class="icon"><span class="icon-phone"></span></div>
               <div class="text">
-                <h3>000 (123) 456 7890</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <h3>00 216 24 318 745</h3>
+                <p>Call us , we'd be happy to answer</p>
               </div>
             </div>
             <div class="col-md-4 d-flex ftco-animate">
               <div class="icon"><span class="icon-my_location"></span></div>
               <div class="text">
-                <h3>198 West 21th Street</h3>
-                <p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+                <h3>Rue du Lac Huron, Tunis, Tunisie</h3>
+                <p>	Obladi combine coffee place & working space</p>
               </div>
             </div>
             <div class="col-md-4 d-flex ftco-animate">
               <div class="icon"><span class="icon-clock-o"></span></div>
               <div class="text">
-                <h3>Open Monday-Friday</h3>
+                <h3>Open Monday-Sunday</h3>
                 <p>8:00am - 9:00pm</p>
               </div>
             </div>
@@ -158,7 +158,7 @@
           <h2 class="mb-4">Our Story</h2>
         </div>
         <div>
-          <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+          <p>Obladi combine coffee place & working space, tout en gardant un esprit eco-friendly. Notre devise: vous proposer un café de qualité, proposé aux standards internationaux, et vous offrir un espace calme, design et propice à la communication, au travail et à la détente.</p>
         </div>
       </div>
     </div>
@@ -174,7 +174,7 @@
             </div>
             <div class="media-body">
               <h3 class="heading">Easy to Order</h3>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              <p>each merchant with a user-friendly ordering system. Let your customers order and pay with your own personalized</p>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
             </div>
             <div class="media-body">
               <h3 class="heading">Fastest Delivery</h3>
-              <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+              <p>Order coffee and espresso beans that's fresh roasted to your order. Obladi curates the ultimate coffee delivery for you.</p>
             </div>
           </div>
         </div>
@@ -195,7 +195,7 @@
               <span class="flaticon-coffee-bean"></span></div>
               <div class="media-body">
                 <h3 class="heading">Quality Coffee</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>The quality of your coffee beans can make a huge difference in the flavor and aroma of your morning cup.</p>
               </div>
             </div>
           </div>
@@ -210,7 +210,7 @@
             <div class="heading-section text-md-right ftco-animate">
               <span class="subheading">Discover</span>
               <h2 class="mb-4">Our Menu</h2>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <p class="mb-4">Obladi combine coffee place & working space, tout en gardant un esprit eco-friendly. Notre devise: vous proposer un café de qualité, proposé aux standards internationaux, et vous offrir un espace calme, design et propice à la communication, au travail et à la détente.</p>
               <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
             </div>
           </div>
