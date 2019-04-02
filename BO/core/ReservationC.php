@@ -45,7 +45,7 @@ function numberReservations()
 function supprimerReservation(int $idResevation)
 {
   $db=config::getConnexion();
-  $sql="delete from reservation where idResevation=:idResevation";
+  $sql="delete from reservation where idReservation=:idResevation";
   $req=$db->prepare($sql);
   $req->bindvalue(':idResevation',$idResevation);
 

@@ -58,6 +58,7 @@ if(isset($_POST['idSup'])){
             </span>
           </div>
           <div class="box-body">
+            <!--table des infos-->
             <table id="" class="table table-bordered table-hover">
               <thead>
                 <tr>
