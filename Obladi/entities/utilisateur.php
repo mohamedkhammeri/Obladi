@@ -9,12 +9,12 @@ class utilisateur{
 	private $numTel;
 	private $region;
 	private $prof;
-    private $pointsFidelites;	
     private $active;
+    private $nbrCnx;
 
 
 
-	function __construct($nom,$prenom,$email,$dateNaissance,$mdp,$numTel,$region,$prof,$pointsFidelites,$active){
+	function __construct($nom,$prenom,$email,$dateNaissance,$mdp,$numTel,$region,$prof,$active,$nbrCnx){
 		$this->nom=$nom;
 		$this->prenom=$prenom;
 		$this->email=$email;
@@ -23,8 +23,8 @@ class utilisateur{
 		$this->numTel=$numTel;
 		$this->region=$region;
 		$this->prof=$prof;
-	    $this->pointsFidelites=$pointsFidelites;
 		$this->active=$active;
+		$this->nbrCnx=$nbrCnx;
 	}
 
 
@@ -57,8 +57,8 @@ class utilisateur{
 	function getProf(){
 		return $this->prof;
 	}
-	function getPointsFidelites(){
-		return $this->pointsFidelites;
+	function getNbrCnx(){
+		return $this->nbrCnx;
 	}
 	function getActive(){
 		return $this->active;
@@ -91,8 +91,8 @@ class utilisateur{
 	function setProf($prof){
 		$this->prof=$prof;
 	}
-	function setPointsFidelites($pointsFidelites){
-		$this->pointsFidelites=$pointsFidelites;
+	function setNbrCnx($pointsFidelites){
+		$this->nbrCnx=$nbrCnx;
 	}
 	function setActive($active){
 		$this->active=$active;

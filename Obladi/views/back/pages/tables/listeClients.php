@@ -411,7 +411,7 @@ $listeUtilisateurs=$utilisateurC->afficherUtilisateurs();
 <td>Num Tel</td>
 <td>region</td>
 <td>prof</td>
-<td>points</td>
+<td>nombre Cnx</td>
 <td>active</td>
 </tr>
 
@@ -428,7 +428,7 @@ foreach($listeUtilisateurs as $row){
   <td><?PHP echo $row['numTel']; ?></td>
   <td><?PHP echo $row['region']; ?></td>
   <td><?PHP echo $row['prof']; ?></td>
-<td><?PHP echo $row['pointsFidelites']; ?></td>
+<td><?PHP echo $row['nbrCnx']; ?></td>
  <td><?PHP echo $row['active']; ?></td>
 
   </tr>

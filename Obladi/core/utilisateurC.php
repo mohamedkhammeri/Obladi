@@ -4,7 +4,7 @@ include "config.php";
 class utilisateurC {
  
 	function creerCompte($utilisateur){
-		$sql="insert into utilisateur (nom,prenom,email,dateNaissance,mdp,numTel,region,prof,pointsFidelites,active,role) values (:nom,:prenom,:email,:dateNaissance,:mdp,:numTel,:region,:prof,:pointsFidelites,:active,:role)";
+		$sql="insert into utilisateur (nom,prenom,email,dateNaissance,mdp,numTel,region,prof,active,role,nbrCnx) values (:nom,:prenom,:email,:dateNaissance,:mdp,:numTel,:region,:prof,:active,:role,:nbrCnx)";
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
@@ -17,9 +17,9 @@ class utilisateurC {
         $numTel=$utilisateur->getNumTel();
         $region=$utilisateur->getRegion();
         $prof=$utilisateur->getProf();
-        $pointsFidelites=5;
         $active=true;
          $role='utilisateur';
+         $nbrCnx=0;
 
         		$mdp = crypt($mdp, "$6$rounds=5000$macleapersonnaliseretagardersecret$");
 
@@ -31,9 +31,10 @@ class utilisateurC {
 		$req->bindValue(':numTel',$numTel);
 		$req->bindValue(':region',$region);
 		$req->bindValue(':prof',$prof);
-		$req->bindValue(':pointsFidelites',$pointsFidelites);
 		$req->bindValue(':active',$active);
 		$req->bindValue(':role',$role);
+        $req->bindValue(':nbrCnx',$nbrCnx);
+
 
 		
             $req->execute();
@@ -58,8 +59,8 @@ class utilisateurC {
             die('Erreur: '.$e->getMessage());
         }
     }
-     function modifierUtilisateur($utilisateur,$nom){
-        $sql="UPDATE utilisateur SET  nom=:nom,prenom=:prenom,email=:email,dateNaissance=:dateNaissance,mdp=:mdp,numTel=:numTel,region=:region,prof=:prof WHERE nom='".$nom."'";
+     function modifierUtilisateur($utilisateur){
+        $sql="UPDATE utilisateur SET  nom=:nom,prenom=:prenom,email=:email,dateNaissance=:dateNaissance,mdp=:mdp,numTel=:numTel,region=:region,prof=:prof WHERE email='".$_SESSION['email']."'";
         
         $db = config::getConnexion();
 try{        
@@ -125,7 +126,7 @@ try{
                 $_SESSION['numTel'] = $req['numTel'];
                 $_SESSION['region'] = $req['region'];
                 $_SESSION['prof'] = $req['prof'];
-                $_SESSION['pointsFidelites'] = $req['pointsFidelites'];
+                $_SESSION['nbrCnx'] = $req['nbrCnx'];
                 
                 $goto="";
                    if($req['role']=="admin")
