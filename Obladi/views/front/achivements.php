@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<?PHP
- session_start();
-include "../../core/articleC.php";
-$articleC=new articleC();
-$listeArticles=$articleC->afficherArticles();
 
-//var_dump($listeEmployes->fetchAll());
-?>
+
+<html lang="en">
 
   <head>
+
+ <?php
+ session_start();
+ ?>
+    
     <title>Obladi Coffee</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,8 +37,7 @@ $listeArticles=$articleC->afficherArticles();
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  	
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  	 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html"><img src="images/logoobladi.png" style="width: 55px;"></small></a>
 
@@ -109,78 +107,36 @@ $listeArticles=$articleC->afficherArticles();
         </div>
       </div>
     </nav>
-    <!-- END nav -->
-    <!-- END nav -->
+    <!-- END nav -->    <!-- END nav -->
 
-    <section class="home-slider owl-carousel">
 
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-      	<div class="overlay"></div>
-        <div class="container">
-          <div class="row slider-text justify-content-center align-items-center">
 
-            <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            	<h1 class="mb-3 mt-5 bread">Blog</h1>
-	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
-            </div>
+               
 
-          </div>
-        </div>
-      </div>
-    </section>
+<form  class="billing-form ftco-bg-dark p-3 p-md-5" style="background-color: #4b9d4d99 margin: 164px;" >
+              <h4 class="mb-4 billing-heading">My achivements </h4>
+              <h3 class="mb-4 billing-heading">Your level is  </h3>
 
-    <section class="ftco-section">
-               <div class="container">
-                    <div class="row d-flex">
-
-      
-        <?PHP
-      foreach($listeArticles as $row){
-  ?>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url(<?PHP echo 'http://localhost/Obladi/views/back/pages/Blog/uploads/'.$row['image']; ?>); width: 300px"></a>
-              <div class="text py-4 d-block">
-              	<div class="meta">
-                  <div><a href="#"><?PHP echo $row['date']; ?></a></div>
-                </div>
-                <h3 class="heading mt-2"><a href="#"><?PHP echo $row['titre']; ?></a></h3>
-                <p><?PHP echo $row['contenue']; ?></p>
-              </div>
-            </div>
-          </div>
-
-          
-          <?PHP
-}
-?>
-             
-
-              </div>
-
-            </section>
 
               
+            </form><!-- END -->
 
-  
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+               
+                
+                
+              </form>
 
-        
+
+
+
+
+
+
+
+
+
+
+
  <footer class="ftco-footer ftco-section img">
       <div class="container">
         <div class="row mb-5">
@@ -225,7 +181,6 @@ $listeArticles=$articleC->afficherArticles();
     
   
 
-    
   
 
   <!-- loader -->
@@ -249,6 +204,7 @@ $listeArticles=$articleC->afficherArticles();
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
     
   </body>
 </html>

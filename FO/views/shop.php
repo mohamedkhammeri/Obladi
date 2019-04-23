@@ -12,11 +12,11 @@
            if(!isset($_SESSION['id'])){
             ?>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item active"><a href="../../Obladi/views/front/index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="../../Obladi/views/front/gallery.html" class="nav-link">Gallery</a></li>
             <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
-            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="../../Obladi/views/front/blog.php" class="nav-link">Blog</a></li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -27,24 +27,22 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="shop.html">Shop</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
-                <a class="dropdown-item" href="room.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+                <a class="dropdown-item" href="shop.php">Shop</a>
+                <a class="dropdown-item" href="menu.php">Cart</a>
               </div>
             </li>
-            <li class="nav-item"><a href="login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
+            <li class="nav-item"><a href="../../Obladi/views/front/login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
             <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
           </ul>
           <?php
           }
            if(isset($_SESSION['id'])) { ?>
            <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-item active"><a href="../../Obladi/views/front/index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="../../Obladi/views/front/gallery.html" class="nav-link">Gallery</a></li>
             <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
-            <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="../../Obladi/views/front/blog.php" class="nav-link">Blog</a></li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -55,13 +53,11 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="shop.html">Shop</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
-                <a class="dropdown-item" href="room.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+                <a class="dropdown-item" href="shop.php">Shop</a>
+                <a class="dropdown-item" href="menu.php">Cart</a>
               </div>
             </li>
-            <li  class="nav-item dropdown" class="nav-item" ><a href="myaccount.php" class="nav-link btn btn-primary" > <?php echo $_SESSION['nom']; ?></a>
+            <li  class="nav-item dropdown" class="nav-item" ><a href="../../Obladi/views/front/myaccount.php" class="nav-link btn btn-primary" > <?php echo $_SESSION['nom']; ?></a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
                 <a class="dropdown-item" name="logout" href="logout.php">logout</a>
               </div></li>
