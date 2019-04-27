@@ -1,4 +1,7 @@
-<?php include_once 'includes/header.inc.php'; ?>
+<?php
+
+require_once '../core/ProduitC.php';
+include_once 'includes/header.inc.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
@@ -111,7 +114,6 @@
       <div class="row">
 
         <?php
-        require_once '../core/ProduitC.php';
         $prods=afficherProduitMenu();
         $coffees=array();
         $desserts=array();

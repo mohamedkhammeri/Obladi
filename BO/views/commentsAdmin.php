@@ -1,8 +1,10 @@
 <?php
-include_once 'includes/header.inc.php';
 require_once '../core/ProduitNoteC.php';
 require_once '../core/ProduitC.php';
 require_once '../entities/Produit.php';
+
+include_once 'includes/header.inc.php';
+
 
 if(isset($_POST['idSup'])){
   supprimerProduitNote($_POST['idSup']);

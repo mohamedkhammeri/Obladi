@@ -1,3 +1,12 @@
+<?php
+
+if (isset($_POST['signout'])) {
+  unset($_SESSION['signOn']);
+  header('location: sign-in.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +64,17 @@
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
+        <div class="navbar-custom-menu pull-right">
+          <ul class="nav navbar-nav">
+            <li class="user user-menu">
+              <form class="dropdown-toggle" method="post">
+                <input type="hidden" name="signout" value="true">
+                <button type="submit" class="btn btn-default btn-flat">Sign out</button>
+              </form>
+            </li>
+          </ul>
+
+        </div>
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->

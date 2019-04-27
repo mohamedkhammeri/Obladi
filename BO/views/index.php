@@ -1,10 +1,11 @@
 
   <?php
-  include_once 'includes/header.inc.php';
   require_once '../core/ProduitC.php';
   require_once '../core/ReservationC.php';
   require_once '../core/EspaceC.php';
   require_once '../core/ProduitNoteC.php';
+
+  include_once 'includes/header.inc.php';
    ?>
 
   <!-- Content Wrapper. Contains page content -->

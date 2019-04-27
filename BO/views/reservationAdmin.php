@@ -1,6 +1,7 @@
 <?php
-include_once 'includes/header.inc.php';
+
 require_once '../core/ReservationC.php';
+include_once 'includes/header.inc.php';
 
 if(isset($_POST['idSup'])){
   supprimerReservation($_POST['idSup']);

@@ -7,7 +7,7 @@ $idProd=$_POST['idComments'];
 $msg=$_POST['msg'];
 $note=$_POST['nbStars'];
 
-var_dump($_POST);
+//var_dump($_POST);
 
 ajouterProduitNote(new ProduitNote($idProd,$msg,$note));
 

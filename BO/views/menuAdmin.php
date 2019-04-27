@@ -4,9 +4,10 @@ if(isset($_POST['idUpdate'])){
   header("location: updateProductMenu.php?idUpdate={$_POST['idUpdate']}");
 }
 
-include_once 'includes/header.inc.php';
 require_once '../core/ProduitC.php';
 require_once '../entities/Produit.php';
+
+include_once 'includes/header.inc.php';
 
 if(isset($_POST['idSup'])){
   supprimerProduit($_POST['idSup']);
@@ -44,12 +45,12 @@ if(isset($_POST['idSup'])){
                 }
               }
             </style>
-            <div id="searshForm" class="input-group col-md-3" style="margin-left:20px;">
-              <input type="text" name="q" class="form-control" placeholder="Search...">
+            <div id="searchForm" class="input-group col-md-3" style="margin-left:20px;">
+              <input type="text" name="searchForm" id="searchInput" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
-                    <button type="button" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                    </button>
-                  </span>
+                <button type="button" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
             </div>
             <span class="pull-right">
               <button id="addBtn" type="button" class="btn btn-success" name="button">
@@ -58,7 +59,7 @@ if(isset($_POST['idSup'])){
             </span>
           </div>
           <div class="box-body">
-            <table id="" class="table table-bordered table-hover">
+            <table id="tableData" class="table table-bordered table-hover">
               <thead>
                 <tr>
                   <th>Titre</th>
@@ -122,6 +123,25 @@ if(isset($_POST['idSup'])){
   document.getElementById('addBtn').addEventListener('click',function () {
     window.location.href='addProductMenu.php';
   });
+
+  //Recherche
+
+  var searchInput=document.getElementById('searchInput');
+  var tableData=document.getElementById('tableData');
+  searchInput.addEventListener('input',function () {
+    //event.target
+    //console.log(searchInput.value);
+
+    for (var i = 1, row; row=tableData.rows[i]; i++) {
+      //console.log(searchInput.value,row.cells[0].innerText!=searchInput.value,row.cells[0].innerText);
+      if(searchInput.value!='' && !(row.cells[0].innerText.toLowerCase().includes(searchInput.value.toLowerCase())))
+      tableData.rows[i].style.display='none';
+      else {
+        tableData.rows[i].style.display='table-row';
+      }
+    }
+  });
+
 </script>
 
 

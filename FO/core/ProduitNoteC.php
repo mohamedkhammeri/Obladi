@@ -4,14 +4,13 @@ require '../../config.php';
 
 function ajouterProduitNote(ProduitNote $ProdNote)
 {
-
+  //notification if 5 stars
   $db=config::getConnexion();
-  $sql="insert into produitnote values(?,?,?)";
+  $sql="insert into produitnote(idprodnote,comment,rating) values(?,?,?)";
   $req=$db->prepare($sql);
   $req->bindvalue(1,$ProdNote->getIdProdNote());
   $req->bindvalue(2,$ProdNote->getComment());
   $req->bindvalue(3,$ProdNote->getRating());
-
 
   $req->execute();
 

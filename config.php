@@ -1,4 +1,9 @@
 <?php
+/*
+session_start();
+if (!isset($_SESSION['signOn'])) {
+  header('location: sign-in.php');
+}*/
 
 class config {
   private static $instance = NULL;
