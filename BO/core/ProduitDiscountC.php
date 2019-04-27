@@ -1,17 +1,17 @@
 <?php
 
-require '../../config.php';
+require_once '../../config.php';
 
 function ajouterProduitDiscount(ProduitDiscount $ProdDisc)
 {
 
   $db=config::getConnexion();
-  $sql="insert into reservation values(?)";
+  $sql="insert into produitdiscount values(?,?)";
   $req=$db->prepare($sql);
-  $req->bindvalue(1,$ProdDisc->getDiscount());
+  $req->bindvalue(1,$ProdDisc->getIdProdDiscount());
+  $req->bindvalue(2,$ProdDisc->getDiscount());
 
   $req->execute();
-
 }
 
 function afficherProduitDiscount()
@@ -32,7 +32,7 @@ function supprimerProduitDiscount(int $idProdDiscount)
   $req->execute();
 }
 
-function modifierReservation(ProduitDiscount $newProdDiscount)
+function modifierProduitDiscount(ProduitDiscount $newProdDiscount)
 {
   $db=config::getConnexion();
   $sql="update produitdiscount set discount=:discount where idProdDiscount=:idProdDiscount";
@@ -41,6 +41,31 @@ function modifierReservation(ProduitDiscount $newProdDiscount)
   $req->bindvalue(':discount',$newProdDiscount->getDiscount());
 
   $req->execute();
+}
+
+function existDiscount($id)
+{
+  $db=config::getConnexion();
+  $sql="select * from produitdiscount where idProdDiscount=:idProdDiscount";
+  $req=$db->prepare($sql);
+  $req->bindvalue(':idProdDiscount',$id);
+
+  $req->execute();
+  if($row=$req->fetch())
+    return true;
+  return false;
+}
+
+function getProduitDiscountById($id)
+{
+  $db=config::getConnexion();
+  $sql="select * from produitdiscount where idProdDiscount=:idProdDiscount";
+  $req=$db->prepare($sql);
+  $req->bindvalue(':idProdDiscount',$id);
+
+  $req->execute();
+  $row=$req->fetch();
+  return new ProduitDiscount($row['idproddiscount'],$row['discount']);
 }
 
 ?>

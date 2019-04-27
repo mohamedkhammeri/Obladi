@@ -105,6 +105,7 @@ if (isset($_POST['signout'])) {
             <ul class="treeview-menu">
               <li><a href="shopAdmin.php"><i class="fa fa-shopping-cart"></i> Shop </a></li>
               <li><a href="menuAdmin.php"><i class="fa fa-list-alt"></i> Menu </a></li>
+              <li><a href="discount.php"><i class="fa fa-money"></i> Discount </a></li>
             </ul>
           </li>
 
