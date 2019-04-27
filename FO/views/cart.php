@@ -1,22 +1,42 @@
 <?php
-
 require_once '../core/ProduitC.php';
-include_once 'includes/header.inc.php'; ?>
+require_once '../entities/Produit.php';
+include_once 'includes/header.inc.php';
+//controle de saisie
+if(isset($_GET['idProd'])){
+  $prodAddToCart=$_GET['idProd'];
+}
+if(isset($_GET['idDel'])){
+  $idDel=$_GET['idDel'];
+  if(is_numeric($idDel)){
+    unset($_SESSION['cart'][$idDel]);
+  }
+}
+//controle saisie
+if(isset($prodAddToCart) && is_numeric($prodAddToCart)){
+  if(isset($_SESSION['cart'][$prodAddToCart])){
+    $_SESSION['cart'][$prodAddToCart]++;
+  }else {
+    $_SESSION['cart'][$prodAddToCart]=1;
+  }
+}
+
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="assets/images/logoobladi.png" style="width: 55px;"></small></a>
+    <a class="navbar-brand" href="./"><img src="assets/images/logoobladi.png" style="width: 55px;"></small></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="oi oi-menu"></span> Menu
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="./" class="nav-link">Home</a></li>
+        <li class="nav-item active"><a href="./" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
         <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
         <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-        <li class="nav-item active"><a href="shop.php" class="nav-link">Shop</a></li>
+        <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
         <?php
         if(!isset($_SESSION['id'])) { ?>
           <li class="nav-item"><a href="../../Obladi/views/front/login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
@@ -36,7 +56,6 @@ include_once 'includes/header.inc.php'; ?>
     </div>
   </nav>
   <!-- END nav -->
-  <!-- END nav -->
 
   <section class="home-slider owl-carousel">
 
@@ -46,8 +65,8 @@ include_once 'includes/header.inc.php'; ?>
         <div class="row slider-text justify-content-center align-items-center">
 
           <div class="col-md-7 col-sm-12 text-center ftco-animate">
-            <h1 class="mb-3 mt-5 bread">Order Online</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="./">Home</a></span> <span>Shop</span></p>
+            <h1 class="mb-3 mt-5 bread">Cart</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="./">Home</a></span> <span>Cart</span></p>
           </div>
 
         </div>
@@ -55,6 +74,88 @@ include_once 'includes/header.inc.php'; ?>
     </div>
   </section>
 
+  <section class="ftco-section ftco-cart">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ftco-animate">
+          <div class="cart-list">
+            <table class="table">
+              <thead class="thead-primary">
+                <tr class="text-center">
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                //init Total
+                $subTotal=0;
+                //parcours produits ajoutés à session
+                foreach ($_SESSION['cart'] as $key => $value) {
+                  $prod=getProduitById($key);
+                  ?>
+
+                  <tr class="text-center">
+                    <td class="product-remove"><a href="cart.php?idDel=<?php echo $key ?>"><span class="icon-close"></span></a></td>
+
+                    <td class="image-prod"><div class="img" style="background-image:url(stockage/<?php echo $prod->getPhoto() ?>);"></div></td>
+
+                    <td class="product-name">
+                      <h3><?php echo $prod->getTitre() ?></h3>
+                      <p><?php echo $prod->getDescription(); ?></p>
+                    </td>
+
+                    <td class="price"><?php echo $prod->getPrix() ?> DT</td>
+
+                    <td class="quantity">
+                      <div class="input-group mb-3">
+                        <input type="text" name="quantity" class="quantity form-control input-number" value="<?php echo $value ?>" min="1" max="100">
+                      </div>
+                    </td>
+                    <!--calcul total-->
+                    <td class="total"><?php echo $value*$prod->getPrix() ?> DT</td>
+                    <!--calcul sub total-->
+                    <?php
+                    $subTotal+=$value*$prod->getPrix();
+                    ?>
+                  </tr>
+
+                  <?php
+
+                }
+                ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col col-lg-3 col-md-6 mt-5 cart-wrap ftco-animate">
+          <div class="cart-total mb-3">
+            <h3>Cart Totals</h3>
+            <p class="d-flex">
+              <span>Subtotal</span>
+              <span><?php echo $subTotal ?> DT</span>
+            </p>
+            <p class="d-flex">
+              <span>Delivery</span>
+              <span>0 DT</span>
+            </p>
+            <hr>
+            <p class="d-flex total-price">
+              <span>Total</span>
+              <span><?php echo $subTotal ?> DT</span>
+            </p>
+          </div>
+          <p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="ftco-menu">
     <div class="container">

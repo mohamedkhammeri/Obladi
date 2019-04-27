@@ -1,87 +1,43 @@
-<<<<<<< HEAD
 <?php
 
 require_once '../core/ProduitC.php';
 include_once 'includes/header.inc.php'; ?>
-=======
-<?php 
-    session_start()
-     include_once 'includes/header.inc.php'; ?>
-
->>>>>>> 6b87374186ee5418532632cbc05105368ac65c15
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="assets/images/logoobladi.png" style="width: 55px;"></small></a>
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="assets/images/logoobladi.png" style="width: 55px;"></small></a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-        <div class="collapse navbar-collapse" id="ftco-nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="./" class="nav-link">Home</a></li>
+        <li class="nav-item active"><a href="menu.php" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
+        <?php
+        if(!isset($_SESSION['id'])) { ?>
+          <li class="nav-item"><a href="../../Obladi/views/front/login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
           <?php
-           if(!isset($_SESSION['id'])){
-            ?>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="../../Obladi/views/front/index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="../../Obladi/views/front/gallery.html" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
-            <li class="nav-item"><a href="../../Obladi/views/front/blog.php" class="nav-link">Blog</a></li>
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="contact.html">Contact us</a>
-                <a class="dropdown-item" href="product-single.html">Our Team</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="menu.php">Cart</a>
-              </div>
-            </li>
-            <li class="nav-item"><a href="../../Obladi/views/front/login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
-            <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-          </ul>
-          <?php
-          }
-           if(isset($_SESSION['id'])) { ?>
-           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="../../Obladi/views/front/index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="../../Obladi/views/front/gallery.html" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
-            <li class="nav-item"><a href="../../Obladi/views/front/blog.php" class="nav-link">Blog</a></li>
-             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="contact.html">Contact us</a>
-                <a class="dropdown-item" href="product-single.html">Our Team</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="shop.php">Shop</a>
-                <a class="dropdown-item" href="menu.php">Cart</a>
-              </div>
-            </li>
-            <li  class="nav-item dropdown" class="nav-item" ><a href="../../Obladi/views/front/myaccount.php" class="nav-link btn btn-primary" > <?php echo $_SESSION['nom']; ?></a>
+        }else{
+          ?>
+          <li  class="nav-item dropdown" class="nav-item" ><a href="../../Obladi/views/front/myaccount.php" class="nav-link btn btn-primary" > <?php echo $_SESSION['nom']; ?></a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" name="logout" href="logout.php">logout</a>
-              </div></li>
-            <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
-          </ul>
-          <?php
-        }
-        ?>
+              <a class="dropdown-item" name="logout" href="logout.php">logout</a>
+            </div></li>
+            <?php
+          }
+          ?>
+          <li class="nav-item cart"><a href="cart.php" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small><?php echo count($_SESSION['cart']); ?></small></span></a></li>
+        </ul>
 
-        </div>
       </div>
-    </nav>
-    <!-- END nav -->
-<!-- END nav -->
+    </div>
+  </nav>
+  <!-- END nav -->
+  <!-- END nav -->
 
   <section class="home-slider owl-carousel">
 
