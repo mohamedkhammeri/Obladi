@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Obladi Coffee</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <link rel="stylesheet" href="css/login.css">
+
+  </head>
+  <body>
+   
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="images/logoobladi.png" style="width: 55px;"></small></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <?php
+           if(!isset($_SESSION['id'])){
+            ?>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="../../../FO/views/index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../../../FO/views/menu.php" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
+            <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="contact.html">Contact us</a>
+                <a class="dropdown-item" href="product-single.html">Our Team</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="../../../FO/views/shop.php">Shop</a>
+                <a class="dropdown-item" href="../../../FO/views/room.php">Cart</a>
+              </div>
+            </li>
+            <li class="nav-item"><a href="login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
+            <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+          </ul>
+          <?php
+          }
+           if(isset($_SESSION['id'])) { ?>
+           <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="../../../FO/views/index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="../../../FO/views/menu.php" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
+            <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="contact.html">Contact us</a>
+                <a class="dropdown-item" href="product-single.html">Our Team</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="../../../FO/views/shop.php">Shop</a>
+                <a class="dropdown-item" href="../../../FO/views/menu.php">Cart</a>
+              </div>
+            </li>
+            <li  class="nav-item dropdown" class="nav-item" ><a href="myaccount.php" class="nav-link btn btn-primary" > <?php echo $_SESSION['nom']; ?></a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" name="logout" href="logout.php">logout</a>
+              </div></li>
+            <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+          </ul>
+          <?php
+        }
+        ?>
+
+        </div>
+      </div>
+    </nav>
+    <!-- END nav -->
+    
+    <form method="POST" action="connectToPlatform.php" class="user">
+      <div class="user_options-container">
+        <div class="user_options-text">
+          <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">Don't have an account?</h2>
+        <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">Have an account?</h2>
+        <button class="user_registered-login" name="login" id="login-button">Login</button>
+      </div>
+    </div>
+    
+    <div class="user_options-forms" id="user_options-forms" style="height: 500px;">
+      <div class="user_forms-login" style="height: 500px;">
+        <h2 class="forms_title">Login</h2>
+ 
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="Email" name="email" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Password" name="mdp" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button"  class="forms_buttons-forgot">Forgot password?</button>
+            <input type="submit" value="Log In" class="forms_buttons-action">
+          </div>
+    </form>
+      </div>
+      <div class="user_forms-signup">
+        <h2 class="forms_title">Sign Up</h2>
+        <TABLE class="forms_form">
+          <form method="POST" action="creeCompte.php" name="MyForm">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field" style="display: inline-flex;">
+              <input type="text" placeholder=" Name" name="nom" id="nom" class="forms_field-input" required />
+              <span class="tooltip">Un nom ne peut pas faire moins de 4 caractères</span>
+               <input type="text" placeholder=" prenom " name="prenom" id="penom" class="forms_field-input" required />
+               <span class="tooltip">Un nom ne peut pas faire moins de 4 caractères</span>
+
+
+            </div>
+            <div class="forms_field" style="display: inline-flex;">
+              <input type="date" placeholder="Birthday" name="dateNaissance" class="forms_field-input" required />
+             <input type="number" placeholder="num tel" name="numTel" class="forms_field-input" required />
+
+            </div>
+            <div class="forms_field">
+              <input type="email" placeholder="Email" name="email" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Password" name="mdp" class="forms_field-input" required />
+             <span class="tooltip">Le mot de passe ne doit pas faire moins de 6 caractères</span>
+
+            </div>
+            <div class="forms_field" style="display: inline-flex;">
+<select name="region" class="forms_field-input">
+          <option value="none">Sélectionnez votre region</option>
+          <option value="La petite ariana">La petite ariana</option>
+          <option value="Cité el ghazela">Cité el ghazela</option>
+          <option value="Raoued">Raoued</option>
+            <option value="Menzah">Menzah</option>
+            </select>
+        <span class="tooltip">Vous devez sélectionner  </span>     
+        <select name="prof" class="forms_field-input">
+          <option value="none">Sélectionnez votre region</option>
+          <option value="etudiant">etudiant</option>
+          <option value="prof">prof</option>
+          
+            </select>
+        <span class="tooltip">Vous devez sélectionner  </span>            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="Sign up" class="forms_buttons-action">
+            <input type="reset" value="reset" class="forms_buttons-action">
+
+          </div>
+       </TABLE>
+      </div>
+
+    </div>
+     </div>
+   </form>
+
+
+
+    
+ <footer class="ftco-footer ftco-section img">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>Eco-Friendly coffee place & working space</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="https://www.facebook.com/ObladiCoffee/"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/obladicoffee/"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-5 mb-md-5" style="display: -webkit-box;">
+            <div class="ftco-footer-widget mb-4">
+              <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FObladiCoffee%2F&tabs=timeline&width=340&height=300&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                </div>
+                <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Passage du lac argento, Tunis, Tunisia</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+216 24 318 745</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@obladi.tn</span></a></li>
+                </ul>
+              </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
+            <div class="ftco-footer-widget mb-4">
+              
+           
+
+            </div>
+          </div>
+        </div>
+    </footer>
+    
+    
+ 
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+
+
+  <script src="js/jquery.min.js"></script>
+ 
+
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  <script src="js/login.js"></script>
+ <script src="java.js"></script>
+
+
+ <script>
+        document.forms[0].addEventListener("submit", function(evenement) { 
+            if (document.getElementById("email").value == "") {
+                evenement.preventDefault();
+                alert("Tapez un email valable pour avoir une réponse.");
+                document.getElementById("email").focus();
+            }
+            else if (document.getElementById("nom").value == "") {
+                evenement.preventDefault();
+                alert("Pensez à taper un message !");
+                document.getElementById("nom").focus();
+            }
+        });
+    </script>
+  </body>
+</html>
