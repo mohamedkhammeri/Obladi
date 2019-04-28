@@ -1,6 +1,8 @@
 <?php
 require_once '../core/ProduitC.php';
+require_once '../core/ProduitDiscountC.php';
 require_once '../entities/Produit.php';
+require_once '../entities/ProduitDiscount.php';
 include_once 'includes/header.inc.php';
 //controle de saisie
 if(isset($_GET['idProd'])){
@@ -86,6 +88,7 @@ if(isset($prodAddToCart) && is_numeric($prodAddToCart)){
                   <th>&nbsp;</th>
                   <th>Product</th>
                   <th>Price</th>
+                  <th>Discount</th>
                   <th>Quantity</th>
                   <th>Total</th>
                 </tr>
@@ -97,6 +100,17 @@ if(isset($prodAddToCart) && is_numeric($prodAddToCart)){
                 //parcours produits ajoutés à session
                 foreach ($_SESSION['cart'] as $key => $value) {
                   $prod=getProduitById($key);
+                  $priceProd=$prod->getPrix();
+                  $discount=0;
+                  if(existDiscount($prod->getId())){
+                    $discountProd=getProduitDiscountById($prod->getId());
+                    $discount=$discountProd->getDiscount();
+                    $priceWithDiscount=$priceProd-(($priceProd*$discount)/100);
+                    $finalPriceProd=$priceWithDiscount;
+                  }
+                  else {
+                    $finalPriceProd=$priceProd;
+                  }
                   ?>
 
                   <tr class="text-center">
@@ -109,7 +123,9 @@ if(isset($prodAddToCart) && is_numeric($prodAddToCart)){
                       <p><?php echo $prod->getDescription(); ?></p>
                     </td>
 
-                    <td class="price"><?php echo $prod->getPrix() ?> DT</td>
+                    <td class="price"><?php echo $priceProd ?> DT</td>
+
+                    <td class="price"><?php echo $discount ?> %</td>
 
                     <td class="quantity">
                       <div class="input-group mb-3">
@@ -117,10 +133,10 @@ if(isset($prodAddToCart) && is_numeric($prodAddToCart)){
                       </div>
                     </td>
                     <!--calcul total-->
-                    <td class="total"><?php echo $value*$prod->getPrix() ?> DT</td>
+                    <td class="total"><?php echo $value*$finalPriceProd; ?> DT</td>
                     <!--calcul sub total-->
                     <?php
-                    $subTotal+=$value*$prod->getPrix();
+                    $subTotal+=$value*$finalPriceProd;
                     ?>
                   </tr>
 
