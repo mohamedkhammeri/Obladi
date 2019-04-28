@@ -303,7 +303,7 @@ AOS.init({
       var numStar=event.target.getAttribute('numberelem');
       for (var j = stars.length-1 ; j >= numStar-1; j--) {
         stars[j].className="star ion-md-star";
-        stars[j].style.color="orange";
+        stars[j].style.color="#28a745";
       }
       clicked=false;
       document.getElementById("nbStars").value=0;
@@ -313,6 +313,7 @@ AOS.init({
       if(!clicked)
       for (var j = 0; j < stars.length; j++) {
         stars[j].className="star ion-md-star-outline";
+        stars[j].style.color="white";
       }
     });
 

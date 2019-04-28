@@ -65,7 +65,7 @@ include_once 'includes/header.inc.php'; ?>
               <div class="icon"><span class="icon-phone"></span></div>
               <div class="text">
                 <h3>000 (123) 456 7890</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
+                <p>A small iver named Duden flows by their place and supplies.</p>
               </div>
             </div>
             <div class="col-md-4 d-flex ftco-animate">

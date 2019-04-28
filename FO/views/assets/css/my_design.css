@@ -17,7 +17,7 @@
 .ratings span:focus ~ span,
 .ratings span:hover,
 .ratings span:focus{
-  color: orange;
+  color: #28a745;
   cursor: pointer;
 }
 

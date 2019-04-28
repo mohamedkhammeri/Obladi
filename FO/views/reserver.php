@@ -17,6 +17,7 @@ if($lName && $fName && $date && $time && $tel && $seats && $msg){
   if(ajouterReservation​($res))
   {
     echo "Done";
+    header('refresh:5;url=./');
   }
   else {
     echo "Chose another<br><a href='../'>Home</a>";

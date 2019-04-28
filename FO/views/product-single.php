@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once '../core/ProduitC.php';
+require_once '../entities/Produit.php';
 include_once 'includes/header.inc.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -58,9 +59,6 @@ include_once 'includes/header.inc.php'; ?>
   <!--get info product by id-->
 
   <?php
-
-  require_once '../core/ProduitC.php';
-  require_once '../entities/Produit.php';
   $prod=null;
   $id=$_GET['id'];
   if(is_numeric(trim($id))){
