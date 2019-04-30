@@ -1,6 +1,8 @@
 <?php
-include_once 'includes/header.inc.php';
+
 require_once '../core/EspaceC.php';
+include_once 'includes/header.inc.php';
+
 
 ?>
 

@@ -40,6 +40,7 @@ if(isset($prodAddToCart) && is_numeric($prodAddToCart)){
         <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
         <li class="nav-item"><a href="shop.php" class="nav-link">Shop</a></li>
         <?php
+        //hidaya session
         if(!isset($_SESSION['id'])) { ?>
           <li class="nav-item"><a href="../../Obladi/views/front/login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
           <?php

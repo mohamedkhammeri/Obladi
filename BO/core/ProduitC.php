@@ -86,9 +86,12 @@ function modifierProduit(Produit $newProd)
 function getProduitById(int $id)
 {
   $db=config::getConnexion();
-  $sql="select * from produit where id={$id}";
-  $res=$db->query($sql);
-  $row=$res->fetch();
+  $sql="select * from produit where id=?";
+  $req=$db->prepare($sql);
+  $req->bindvalue(1,$id);
+
+  $req->execute();
+  $row=$req->fetch();
   return new Produit($row['id'],$row['titre'],$row['description'],$row['photo'],$row['categorie'],$row['soustype'],$row['date'],$row['prix']);
 
 }

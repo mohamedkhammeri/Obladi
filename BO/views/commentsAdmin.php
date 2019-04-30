@@ -66,7 +66,7 @@ if(isset($_POST['idSup'])){
                 foreach ($prods as $prod) {
                   ?>
                   <tr>
-                    <td><?php echo getProduitById($prod['id'])->getTitre(); ?></td>
+                    <td><?php echo $prod['titre'] ?></td>
                     <td><?php echo $prod['comment'] ?></td>
                     <td><?php echo $prod['rating'] ?></td>
                     <td>
