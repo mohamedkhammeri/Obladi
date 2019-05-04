@@ -5,7 +5,7 @@
       <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">About Us</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <p>En plus de préparer des mélanges de café selon la plus vieille tradition italienne, nous accompagnons aussi nos clients au sein de leur démarche de communications. Puisque nous habitons chez plus de 200 clients partout en province, nous avons décidé de bâtir un département de communication spécialisé en alimentation pour aider nos clients à promouvoir leur offre de services, tout en augmentant leurs ventes de café.</p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
             <li class="ftco-animate"><a href="https://www.facebook.com/ObladiCoffee/"><span class="icon-facebook"></span></a></li>
             <li class="ftco-animate"><a href="https://www.instagram.com/obladicoffee/"><span class="icon-instagram"></span></a></li>
@@ -17,9 +17,9 @@
           <h2 class="ftco-heading-2">Have a Questions?</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+              <li><span class="icon icon-map-marker"></span><span class="text">Rue du Lac Huron, Tunis, Tunisie</span></li>
+              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+216 55 590 221</span></a></li>
+              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">obladi.coffee@gmail.com</span></a></li>
             </ul>
           </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <p>
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true"></i> <a href="#" target="_blank">IT FREAKS</a>
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true"></i> <a href="#" target="_blank">IT FREAKS </a>
         </p>
       </div>
     </div>

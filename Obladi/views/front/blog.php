@@ -51,11 +51,11 @@ $listeArticles=$articleC->afficherArticles();
            if(!isset($_SESSION['id'])){
             ?>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="../../../FO/views/index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="../../../FO/views/menu.php" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+            <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
             <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
-            <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="about.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -66,8 +66,10 @@ $listeArticles=$articleC->afficherArticles();
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="../../../FO/views/shop.php">Shop</a>
-                <a class="dropdown-item" href="../../../FO/views/room.php">Cart</a>
+                <a class="dropdown-item" href="shop.html">Shop</a>
+                <a class="dropdown-item" href="product-single.html">Single Product</a>
+                <a class="dropdown-item" href="room.html">Cart</a>
+                <a class="dropdown-item" href="checkout.html">Checkout</a>
               </div>
             </li>
             <li class="nav-item"><a href="login.php" class="nav-link btn btn-primary" >Sign in/Sign up</a></li>
@@ -77,9 +79,9 @@ $listeArticles=$articleC->afficherArticles();
           }
            if(isset($_SESSION['id'])) { ?>
            <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="../../../FO/views/index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="../../../FO/views/menu.php" class="nav-link">Menu</a></li>
-            <li class="nav-item"><a href="gallery.php" class="nav-link">Gallery</a></li>
+            <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
             <li class="nav-item"><a href="Reservation.html" class="nav-link">Reservation</a></li>
             <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
              <li class="nav-item dropdown">
@@ -92,8 +94,10 @@ $listeArticles=$articleC->afficherArticles();
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                <a class="dropdown-item" href="../../../FO/views/shop.php">Shop</a>
-                <a class="dropdown-item" href="../../../FO/views/menu.php">Cart</a>
+                <a class="dropdown-item" href="shop.html">Shop</a>
+                <a class="dropdown-item" href="product-single.html">Single Product</a>
+                <a class="dropdown-item" href="room.html">Cart</a>
+                <a class="dropdown-item" href="checkout.html">Checkout</a>
               </div>
             </li>
             <li  class="nav-item dropdown" class="nav-item" ><a href="myaccount.php" class="nav-link btn btn-primary" > <?php echo $_SESSION['nom']; ?></a>
@@ -109,7 +113,6 @@ $listeArticles=$articleC->afficherArticles();
         </div>
       </div>
     </nav>
-    <!-- END nav -->
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
