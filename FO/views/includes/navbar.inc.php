@@ -9,8 +9,6 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item <?php echo isset($homeActive) ? $homeActive : ''; ?>"><a href="./" class="nav-link">Home</a></li>
         <li class="nav-item <?php echo isset($menuActive) ? $menuActive : ''; ?> "><a href="menu.php" class="nav-link">Menu</a></li>
-        <li class="nav-item <?php echo isset($serviceActive) ? $serviceActive : ''; ?>"><a href="services.html" class="nav-link">Services</a></li>
-        <li class="nav-item <?php echo isset($aboutActive) ? $aboutActive : ''; ?>"><a href="about.html" class="nav-link">About</a></li>
         <li class="nav-item <?php echo isset($shopActive) ? $shopActive : ''; ?>"><a href="shop.php" class="nav-link">Shop</a></li>
         <?php
         if(!isset($_SESSION['id'])) { ?>
@@ -18,6 +16,8 @@
           <?php
         }else{
           ?>
+          <li class="nav-item <?php echo isset($serviceActive) ? $serviceActive : ''; ?>"><a href="services.php" class="nav-link">Services</a></li>
+          <li class="nav-item <?php echo isset($livreurActive) ? $livreurActive : ''; ?>"><a href="livreur.php" class="nav-link">Livreur</a></li>
           <li class="nav-item <?php echo isset($cmdActive) ? $cmdActive : ''; ?> dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Commande</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">

@@ -171,6 +171,22 @@ if (isset($_POST['signout'])) {
             </ul>
           </li>
 
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-table"></i> <span>Gestion de la livraison</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="b.php"><i class="fa fa-circle-o"></i> Livreur </a></li>
+              <li><a href="a.php"><i class="fa fa-circle-o"></i> Livraison </a></li>
+              <li><a href="ajoutlivreur.php"><i class="fa fa-circle-o"></i>  ajouterLivreur </a></li>
+              <li><a href="ajoutlivraison.php"><i class="fa fa-circle-o"></i>  ajouter Livraison </a></li>
+              <li><a href="stat.php"><i class="fa fa-circle-o" ></i>  statistiques </a></li>
+            </ul>
+          </li>
+
         </li>
       </ul>
 
