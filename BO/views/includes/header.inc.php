@@ -136,6 +136,41 @@ if (isset($_POST['signout'])) {
             </a>
           </li>
 
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-book"></i> <span>Commande</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="ajoutc1.php"><i class="fa fa-circle-o"></i> Ajout commande</a></li>
+              <li><a href="modifc1.php"><i class="fa fa-circle-o"></i> Modifier commande</a></li>
+              <li><a href="suppc1.php"><i class="fa fa-circle-o"></i> Supprimer commande</a></li>
+              <li><a href="affichec1.php"><i class="fa fa-circle-o"></i> Affiche commande</a></li>
+              <li><a href="rechc1.php"><i class="fa fa-circle-o"></i> Chercher commande</a></li>
+            </ul>
+          </li>
+
+
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-money"></i> <span>Facture</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="ajoutf1.php"><i class="fa fa-circle-o"></i> Ajout facture</a></li>
+              <li><a href="modiff1.php"><i class="fa fa-circle-o"></i> Modifier facture</a></li>
+              <li><a href="suppf1.php"><i class="fa fa-circle-o"></i> Supprimer facture</a></li>
+              <li><a href="affichf1.php"><i class="fa fa-circle-o"></i> Affiche facture</a></li>
+              <li><a href="tri1.php"><i class="fa fa-circle-o"></i> tri facture</a></li>
+              <li><a href="rechf1.php"><i class="fa fa-circle-o"></i> Chercher facture</a></li>
+              <li><a href="pdf.php"><i class="fa fa-circle-o"></i> Liste facture en PDF</a></li>
+            </ul>
+          </li>
+
         </li>
       </ul>
 
