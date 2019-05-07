@@ -26,7 +26,7 @@ header('Location: a.php');
 		<h1>Gestion de la livraison
 			<small>Livraisons</small></h1>
 			<ol class="breadcrumb">
-				<li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
+				<li><a href="Nermine"><i class="fa fa-dashboard"></i> Home</a></li>
 				<li><a href="#">Gestion de la livraison</a></li>
 				<li class="active">Livraisons</li>
 			</ol>

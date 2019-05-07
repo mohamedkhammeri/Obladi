@@ -19,7 +19,7 @@ include_once 'includes/header.inc.php';
         <div class=" col-xs-20">
           <fieldset >
 
-      <form name="f1"  method="POST" action="suppc.php" onSubmit="return verif()" >
+      <form name="f1" method="POST" action="suppc.php" onSubmit="return verif()" >
  <center><legend><h2> Supprimer commande </h2></legend></center>
          <table id="example1" class="table table-striped">
           <tr>

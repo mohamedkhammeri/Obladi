@@ -16,7 +16,7 @@ include_once 'includes/header.inc.php';
     <!-- Small boxes (Stat box) -->
     <div class="row">
       <div class="col-xs-20">
-          <form name="f1"  method="POST" action="modifc.php" onSubmit="return verif()" >
+          <form name="f1" method="POST" action="modifc.php" onSubmit="return verif()" >
             <center><legend><h2> Modifier commande </h2></legend></center>
             <table id="example1" class="table table-striped">
               <tr>

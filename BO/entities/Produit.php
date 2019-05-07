@@ -1,27 +1,28 @@
 <?php
+
 class Produit
 {
-	private $id;
-	private $titre;
-	private $description;
-	private $photo;
-	private $categorie;
-  private $soustype;
-  private $date;
-	private $prix;
+    private $id;
+    private $titre;
+    private $description;
+    private $photo;
+    private $categorie;
+    private $soustype;
+    private $date;
+    private $prix;
 
 
-		public function __construct($id,$titre,$description,$photo,$categorie,$soustype,$date,$prix)
-		{
-			$this->id=$id;
-			$this->titre=$titre;
-			$this->description=$description;
-			$this->photo=$photo;
-			$this->categorie=$categorie;
-      $this->soustype=$soustype;
-      $this->date=$date;
-			$this->prix=$prix;
-		}
+    public function __construct($id, $titre, $description, $photo, $categorie, $soustype, $date, $prix)
+    {
+        $this->id = $id;
+        $this->titre = $titre;
+        $this->description = $description;
+        $this->photo = $photo;
+        $this->categorie = $categorie;
+        $this->soustype = $soustype;
+        $this->date = $date;
+        $this->prix = $prix;
+    }
 
     public function getId()
     {
@@ -131,4 +132,5 @@ class Produit
     }
 
 }
+
 ?>

@@ -18,7 +18,7 @@ include_once 'includes/header.inc.php';
     <div class="row">
       <div class="col-lg-10 col-xs-10">
         <fieldset >
-          <form name="f1"  method="POST" action="ajoutc.php" onSubmit="return verif()" >
+          <form name="f1" method="POST" action="ajoutc.php" onSubmit="return verif()" >
             <center><legend><h2> Ajouter commande </h2></legend></center>
             <table id="example1" class="table table-striped">
               <tr>

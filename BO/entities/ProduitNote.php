@@ -1,71 +1,73 @@
 <?php
+
 class ProduitNote
 {
-	private $idProdNote;
-	private $comment;
-	private $rating;
-	private $id;
+    private $idProdNote;
+    private $comment;
+    private $rating;
+    private $id;
 
-	public function __construct($idProdNote,$comment,$rating)
-	{
-		$this->idProdNote=$idProdNote;
-		$this->comment=$comment;
-		$this->rating=$rating;
-	}
-
-
-	public function getIdProdNote()
-	{
-		return $this->idProdNote;
-	}
+    public function __construct($idProdNote, $comment, $rating)
+    {
+        $this->idProdNote = $idProdNote;
+        $this->comment = $comment;
+        $this->rating = $rating;
+    }
 
 
-	public function setIdProdNote($idProdNote)
-	{
-		$this->idProdNote = $idProdNote;
-
-		return $this;
-	}
+    public function getIdProdNote()
+    {
+        return $this->idProdNote;
+    }
 
 
-	public function getComment()
-	{
-		return $this->comment;
-	}
+    public function setIdProdNote($idProdNote)
+    {
+        $this->idProdNote = $idProdNote;
+
+        return $this;
+    }
 
 
-	public function setComment($comment)
-	{
-		$this->comment = $comment;
-
-		return $this;
-	}
+    public function getComment()
+    {
+        return $this->comment;
+    }
 
 
-	public function getRating()
-	{
-		return $this->rating;
-	}
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+
+        return $this;
+    }
 
 
-	public function setRating($rating)
-	{
-		$this->rating = $rating;
+    public function getRating()
+    {
+        return $this->rating;
+    }
 
-		return $this;
-	}
 
-	public function getId()
-	{
-		return $this->id;
-	}
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
 
-	public function setId($id)
-	{
-		$this->id = $id;
+        return $this;
+    }
 
-		return $this;
-	}
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
 }
+
 ?>

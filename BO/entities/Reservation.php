@@ -1,28 +1,29 @@
 <?php
+
 class Reservation
 {
-	private $idResevation;
-	private $FirstName;
-	private $LastName;
-	private $date;
-	private $time;
-  private $phone;
-  private $message;
-  private $nbPers;
+    private $idResevation;
+    private $FirstName;
+    private $LastName;
+    private $date;
+    private $time;
+    private $phone;
+    private $message;
+    private $nbPers;
 
 
-		public function __construct($idResevation,$FirstName,$LastName,$date,$time,$phone,$message,$nbPers)
-		{
-			$this->idResevation=$idResevation;
-			$this->FirstName=$FirstName;
-			$this->LastName=$LastName;
-			$this->date=$date;
-			$this->time=$time;
-      $this->phone=$phone;
-      $this->message=$message;
-      $this->nbPers=$nbPers;
+    public function __construct($idResevation, $FirstName, $LastName, $date, $time, $phone, $message, $nbPers)
+    {
+        $this->idResevation = $idResevation;
+        $this->FirstName = $FirstName;
+        $this->LastName = $LastName;
+        $this->date = $date;
+        $this->time = $time;
+        $this->phone = $phone;
+        $this->message = $message;
+        $this->nbPers = $nbPers;
 
-		}
+    }
 
 
     public function getIdResevation()
@@ -124,7 +125,7 @@ class Reservation
         return $this->nbPers;
     }
 
-  
+
     public function setNbPers($nbPers)
     {
         $this->nbPers = $nbPers;
@@ -133,4 +134,5 @@ class Reservation
     }
 
 }
+
 ?>

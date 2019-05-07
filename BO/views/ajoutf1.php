@@ -17,7 +17,7 @@ include_once 'includes/header.inc.php';
     <div class="row">
       <div class="col-xs-20">
         <fieldset >
-          <form name="f1"  method="POST" action="ajoutf.php" onSubmit="return verif()" >
+          <form name="f1" method="POST" action="ajoutf.php" onSubmit="return verif()" >
             <center><legend><h2> Ajouter facture </h2></legend></center>
             <table id="example1" class="table table-striped">
               <tr>

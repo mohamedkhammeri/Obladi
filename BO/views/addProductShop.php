@@ -53,9 +53,9 @@ include_once 'includes/header.inc.php';
       <small>Shop</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="Khammeri"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Product</a></li>
-      <li><a href="./menuAdmin.php">Shop</a></li>
+      <li><a href="menuAdmin.php">Shop</a></li>
       <li><a href="#" class="active">Add</a></li>
     </ol>
   </section>

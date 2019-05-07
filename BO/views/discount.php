@@ -24,7 +24,7 @@ if(isset($_POST['idSup'])){
       <small>Discount</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="Khammeri"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Products</a></li>
       <li class="active">Discount</li>
     </ol>

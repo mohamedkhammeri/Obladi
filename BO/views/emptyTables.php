@@ -15,7 +15,7 @@ include_once 'includes/header.inc.php';
       <small></small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="Khammeri"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#" class="active">Empty Table</a></li>
     </ol>
   </section>

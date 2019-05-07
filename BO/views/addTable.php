@@ -28,8 +28,8 @@ include_once 'includes/header.inc.php';
       Table
     </h1>
     <ol class="breadcrumb">
-      <li><a href="./"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="./tableAdmin.php">Table</a></li>
+      <li><a href="Khammeri"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="tableAdmin.php">Table</a></li>
       <li><a href="#" class="active">Add</a></li>
     </ol>
   </section>

@@ -1,17 +1,17 @@
 <?php
+
 class ProduitDiscount
 {
-	private $idProdDiscount;
-	private $discount;
+    private $idProdDiscount;
+    private $discount;
 
 
+    public function __construct($idProdDiscount, $discount)
+    {
+        $this->idProdDiscount = $idProdDiscount;
+        $this->discount = $discount;
 
-		public function __construct($idProdDiscount,$discount)
-		{
-			$this->idProdDiscount=$idProdDiscount;
-			$this->discount=$discount;
-
-		}
+    }
 
 
     public function getIdProdDiscount()
@@ -42,4 +42,5 @@ class ProduitDiscount
     }
 
 }
+
 ?>
