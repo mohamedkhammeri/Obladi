@@ -118,11 +118,14 @@ function login($email, $mdp)
             $_SESSION['prof'] = $req['prof'];
             $_SESSION['nbrCnx'] = $req['nbrCnx'];
 
+
             $req2 = $DB->query("UPDATE utilisateur set nbrCnx=" . $req['nbrCnx'] . "+1 where id=" . $req['id'] . ";");
             $s = $req2->execute();
             $goto = "";
             if ($req['role'] == "admin") {
-                $goto = 'Location:  ../back/index.php';
+                $_SESSION['signOn'] = $req['nom'];
+                $goto = 'Location:  /Obladi/BO/views/';
+
             } else {
                 $goto = 'Location:  index.php';
             }

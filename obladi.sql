@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 07, 2019 at 01:00 AM
+-- Generation Time: May 07, 2019 at 11:05 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -62,7 +62,31 @@ CREATE TABLE `archive` (
 
 INSERT INTO `archive` (`id_reclamation`, `id_client`, `id_motif`, `date`, `etat`, `message`) VALUES
 (6, 66, 1, '2019-03-27', 'en cours', 'drztguoipjzenbfukctm'),
-(4, 66, 2, '2019-03-20', 'ok', '');
+(4, 66, 2, '2019-03-20', 'ok', ''),
+(6, 66, 1, '2019-03-27', 'en cours', 'drztguoipjzenbfukctm'),
+(4, 66, 2, '2019-03-20', 'ok', ''),
+(7, 99, 2, '2019-04-17', 'Non Satisfait', 'ytrezsdfghjkl;,nbvcdr(-yuj,'),
+(5, 55, 1, '2019-04-23', 'Recu', 'azert'),
+(11, 55, 2, '2019-04-27', 'Recu', '3asba'),
+(8, 55, 3, '2019-04-23', 'Recu', 'njarbou ou bch te5dem'),
+(11, 66, 2, '2019-04-17', 'en cours', 'iiiiiiiiiiiiiiiiiiii'),
+(10, 55, 1, '2019-04-23', 'Recu', 'hey'),
+(9, 55, 2, '2019-04-23', 'Recu', 'hey'),
+(14, 2, 1, '2019-04-29', 'Recu', 'qezCz>qDESZcs>Fdesqcf'),
+(12, 2, 2, '2019-04-29', 'Recu', 'defffffffffffffffffffffff'),
+(13, 2, 3, '2019-04-29', 'Recu', 'qcdeqscezacqzc'),
+(17, 2, 2, '2019-04-29', 'Recu', 'xqsdcefrtghyujikolmp'),
+(15, 2, 3, '2019-04-29', 'Non Satisfait', ''),
+(20, 55, 3, '2019-04-29', 'Recu', 'tttttttttttttttttttttttt'),
+(21, 55, 3, '2019-04-29', 'Recu', ''),
+(20, 55, 2, '2019-04-29', 'Recu', 'heydddddddd'),
+(19, 55, 3, '2019-04-29', 'Recu', 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'),
+(22, 55, 1, '2019-04-30', 'Recu', 'eeeeeeeeeeeeffffffffffffffffffffffffffffffffffff'),
+(21, 55, 2, '2019-04-30', 'Recu', 'mekla 5ayba'),
+(29, 55, 3, '2019-04-30', 'Recu', 'livraison khayba barcha ou matouselch fel wa9t'),
+(33, 66, 3, '2019-04-30', 'Recu', 'mawselch ltawa tawaltou 3leya i need it soon'),
+(34, 55, 3, '2019-04-30', 'Recu', 'a'),
+(32, 66, 2, '2019-04-30', 'Recu', 'eeeeeeeeeeee');
 
 -- --------------------------------------------------------
 
@@ -335,6 +359,26 @@ INSERT INTO `livreur` (`login`, `mdp`, `salaire`, `cinL`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `motif`
+--
+
+CREATE TABLE `motif` (
+  `id_motif` int(2) NOT NULL,
+  `motif` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `motif`
+--
+
+INSERT INTO `motif` (`id_motif`, `motif`) VALUES
+(1, 'Qualite de produit'),
+(2, 'Qualite de service'),
+(3, 'Qualite de livraison');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `produit`
 --
 
@@ -413,6 +457,30 @@ INSERT INTO `produitnote` (`id`, `idprodnote`, `comment`, `rating`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reclamation`
+--
+
+CREATE TABLE `reclamation` (
+  `id_reclamation` int(5) NOT NULL,
+  `id_client` int(5) NOT NULL,
+  `id_motif` int(2) NOT NULL,
+  `date` date DEFAULT NULL,
+  `etat` varchar(20) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reclamation`
+--
+
+INSERT INTO `reclamation` (`id_reclamation`, `id_client`, `id_motif`, `date`, `etat`, `message`) VALUES
+(28, 55, 2, '2019-04-30', 'Transfere', 'service khayeb'),
+(30, 55, 1, '2019-04-30', 'Transfere', 'produit mouch eli fel commande'),
+(31, 55, 3, '2019-04-30', 'Transfere', 'wsel cbon');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservation`
 --
 
@@ -479,6 +547,32 @@ INSERT INTO `team` (`id`, `nom`, `role`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `surname` varchar(15) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `role` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `username`, `surname`, `password`, `role`, `email`) VALUES
+(1, 'user', 'user', '1', '1234', 'user', 'user@email.com'),
+(2, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin@email.com'),
+(55, 'aziz', 'aziz', '', '0258', 'client', 'aziz99arfaoui@gmail.com'),
+(66, 'hedi', 'hedi', '', '123', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `utilisateur`
 --
 
@@ -503,7 +597,7 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `dateNaissance`, `mdp`, `numTel`, `region`, `prof`, `active`, `role`, `nbrCnx`) VALUES
 (10, 'hidaya', 'mcharek', 'hidaya.mcharek@esprit.tn', '1998-08-09', '$6.SWLEpG9Sdk', 23668213, 'ar', 'ar', 1, 'utilisateur', 0),
-(12, 'Hidaya', 'admin', 'hidaya@admin', '2019-04-02', '$65I6KH/.1F1w', 123, 'La petite ariana', 'etudiant', 1, 'admin', 3),
+(12, 'Hidaya', 'admin', 'hidaya@admin', '2019-04-02', '$65I6KH/.1F1w', 123, 'La petite ariana', 'etudiant', 1, 'admin', 7),
 (13, 'hidaya', 'mcharek', 'hidaya@client', '2019-04-03', '$65I6KH/.1F1w', 123456, 'Menzah', 'etudiant', 1, 'utilisateur', 11),
 (14, 'hidaya', 'mcharek', 'mcharekhidaya@gmail.com', '1999-02-02', '$6.SWLEpG9Sdk', 23668213, 'La petite ariana', 'etudiant', 1, 'utilisateur', 0),
 (15, 'test', 'test', 'test@test', '2011-01-01', '$65I6KH/.1F1w', 55555, 'none', 'none', 1, 'utilisateur', 0),
@@ -591,6 +685,12 @@ ALTER TABLE `livraison`
   ADD PRIMARY KEY (`cin`);
 
 --
+-- Indexes for table `motif`
+--
+ALTER TABLE `motif`
+  ADD PRIMARY KEY (`id_motif`);
+
+--
 -- Indexes for table `produit`
 --
 ALTER TABLE `produit`
@@ -610,6 +710,13 @@ ALTER TABLE `produitnote`
   ADD KEY `fk_note` (`idprodnote`);
 
 --
+-- Indexes for table `reclamation`
+--
+ALTER TABLE `reclamation`
+  ADD PRIMARY KEY (`id_reclamation`),
+  ADD KEY `id_client` (`id_client`,`id_motif`);
+
+--
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
@@ -625,6 +732,12 @@ ALTER TABLE `star`
 -- Indexes for table `team`
 --
 ALTER TABLE `team`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -688,6 +801,12 @@ ALTER TABLE `produitnote`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `reclamation`
+--
+ALTER TABLE `reclamation`
+  MODIFY `id_reclamation` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
@@ -704,6 +823,12 @@ ALTER TABLE `star`
 --
 ALTER TABLE `team`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `utilisateur`

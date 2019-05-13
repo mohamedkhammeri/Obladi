@@ -18,7 +18,7 @@ function ajouterProduit​(Produit $prod)
     $req->execute();
 
     //send to clients
-    require_once '../views/Khammeri/testMail.php';
+    require_once '../views/testMail.php';
 
 }
 

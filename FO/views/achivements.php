@@ -1,11 +1,11 @@
 <?php
 
-include "../entities/achivement.php";
-
-include "../core/achivementC.php";
+require_once '../../config.php';
+require_once "../entities/achivement.php";
+require_once "../core/achivementC.php";
 
 include_once 'includes/header.inc.php';
-
+include_once 'includes/navbar.inc.php';
 
 $liste = recupererAchivemetClient($_SESSION['id']);
 

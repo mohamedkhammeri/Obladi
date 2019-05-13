@@ -1,5 +1,5 @@
 <?PHP
-include "../../config.php";
+require_once "../../config.php";
 
 
 function facebookShare($id)

@@ -122,6 +122,7 @@ function login($email, $mdp)
             $s = $req2->execute();
             $goto = "";
             if ($req['role'] == "admin") {
+                $_SESSION['signOn'] = $req['nom'];
                 $goto = 'Location:  ../../BO/views/';
             } else {
                 $goto = 'Location:  ./';

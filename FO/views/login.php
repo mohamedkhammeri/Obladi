@@ -1,4 +1,5 @@
 <?php
+require_once '../../config.php';
 include_once 'includes/header.inc.php';
 include_once 'includes/navbar.inc.php';
 ?>
